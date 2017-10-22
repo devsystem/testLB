@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+echo "mysql-server mysql-server/root_password password live" | debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password live" | debconf-set-selections
+
+
+apt-get -y install mysql-server
+
